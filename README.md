@@ -348,6 +348,9 @@ This system has multiple real-world applications across industries:
 ## Dashboard UI
 The project includes a **modern interactive dashboard** built with **Dash (Plotly) & Flask**:  
 
+![Uploading Screenshot (1225).png…]()
+
+
 - **Dark Theme with Neon Highlights** – Futuristic design for easy readability.  
 - **Visualizations**:  
   - Model performance metrics (accuracy, loss curves).  
