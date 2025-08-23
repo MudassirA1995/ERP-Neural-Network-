@@ -294,6 +294,9 @@ if __name__=="__main__":
 ## Model Architecture
 The AI model is based on a **Multi-Layer Perceptron (MLP)** neural network.  
 
+<img width="1920" height="1080" alt="Screenshot (1227)" src="https://github.com/user-attachments/assets/c728690b-2778-46fe-ae5f-4d711592e17d" />
+
+
 - **Input Layer**: Encoded tokens from user queries.  
 - **Hidden Layers**:  
   - **Layer 1**: Dense layer with ReLU activation.  
@@ -349,7 +352,6 @@ This system has multiple real-world applications across industries:
 The project includes a **modern interactive dashboard** built with **Dash (Plotly) & Flask**:  
 
 <img width="1920" height="1080" alt="Screenshot (1225)" src="https://github.com/user-attachments/assets/fd8610b8-ffb1-49a2-a55b-80a6346326f0" />
-
 
 
 - **Dark Theme with Neon Highlights** – Futuristic design for easy readability.  
