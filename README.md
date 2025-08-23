@@ -306,6 +306,11 @@ The network ensures:
 - Scalability to expand with new intents and responses.  
 - High performance due to dropout and regularization techniques.
 
+### How the Model Works 
+
+The model architecture is designed to evaluate and select the best-performing neural network for the given dataset. In this project, two types of neural networks were implemented and trained on the same preprocessed data, ensuring a fair comparison between the approaches. During the training process, each model was initialized with its respective parameters, optimized using backpropagation, and iteratively updated through multiple epochs to minimize loss functions such as Mean Squared Error (for regression) or Cross-Entropy Loss (for classification). The training pipeline involved splitting the dataset into training and validation sets, allowing the models to learn from the training data while their generalization performance was assessed on unseen validation data. After training, performance metrics such as accuracy, mean squared error, and loss values were calculated for both neural networks. These metrics were then compared to identify the superior model. The final selection process was based on the model that consistently demonstrated the highest accuracy and lowest error rates across validation data. This ensures that the chosen model is not only well-optimized but also robust and generalizable for real-world applications. The best-performing model is then integrated into the dashboard for visualization and can be further extended into ERP systems for practical deployment in industrial environments.
+
+
 ---
 
 ## Neural Network Algorithms Used
