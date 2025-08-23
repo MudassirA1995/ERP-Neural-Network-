@@ -1,4 +1,4 @@
-# AI-Powered Chatbot & Dashboard Integration
+# ERP NEURAL NETWORK PREDICTION MODEL
 
 ## Introduction
 This project focuses on building an **AI-powered chatbot system** integrated with a **dashboard interface** to provide an intelligent and interactive experience. The chatbot is trained on structured datasets, using natural language processing (NLP) and deep learning techniques, to understand user queries and respond with contextually accurate answers. Additionally, the project extends to real-time analytics and visualization using an interactive **Dashboard UI**, allowing users to monitor responses, performance metrics, and actionable insights.
