@@ -360,28 +360,107 @@ This project demonstrates how to generate synthetic invoice data, train neural n
 
 Run the script:
 ```bash
-python app.py
-
+python neural_network_arc.py
+```
 
 ---
 
-## Model Architecture
-The AI model is based on a **Multi-Layer Perceptron (MLP)** neural network.  
-
-<img width="1920" height="1080" alt="Screenshot (1227)" src="https://github.com/user-attachments/assets/c728690b-2778-46fe-ae5f-4d711592e17d" />
+<img width="1920" height="1080" alt="model_structure" src="https://github.com/user-attachments/assets/4e315973-9f6c-4881-9e1b-8db8ff06f760" />
 
 
-- **Input Layer**: Encoded tokens from user queries.  
-- **Hidden Layers**:  
-  - **Layer 1**: Dense layer with ReLU activation.  
-  - **Layer 2**: Dense layer with dropout for regularization.  
-  - **Layer 3**: Dense layer with ReLU activation.  
-- **Output Layer**: Softmax activation for classification across possible intents.  
 
-The network ensures:  
-- Ability to handle **complex natural language inputs**.  
-- Scalability to expand with new intents and responses.  
-- High performance due to dropout and regularization techniques.
+# ERP Data Predictor - Model Architecture
+
+This architecture demonstrates the workflow of predicting ERP (Enterprise Resource Planning) data using **Neural Network algorithms**.  
+The system selects the **best performing model** (MLP or TCN), applies **boosting**, and generates **future predictions**.
+
+---
+
+## 📌 Step-by-Step Data Flow
+
+### 1. **ERP Data Input**
+- Raw ERP data is the starting point of the pipeline.  
+- This dataset contains historical records used for training and future prediction.
+
+---
+
+### 2. **Future Data Preparation**
+- The dataset is extended to include **future time points** where predictions are required.  
+- These future records initially lack invoice values, which the model will predict.
+
+---
+
+### 3. **Data Splitting**
+- The ERP data is split into:
+  - **Training Data** – used for training the models.  
+  - **Test Data** – used for evaluation and comparison.  
+- Splitting is performed using **Scikit-learn’s `train_test_split`** method.
+
+---
+
+### 4. **Neural Network Algorithms**
+- Two different neural network architectures are tested:
+  - **MLP (Multi-Layer Perceptron)** – a feedforward dense neural network.  
+  - **TCN (Temporal Convolutional Network)** – captures sequential dependencies in time-series data.  
+
+Both models are trained separately on the same dataset.
+
+---
+
+### 5. **Hyperparameter Tuning**
+The models are fine-tuned by adjusting key parameters such as:
+- Number of layers  
+- Number of attention heads  
+- Dimension of the feedforward network  
+- Learning rate  
+- Batch size  
+- Dropout rate  
+- Sequence length  
+- Epochs  
+
+This ensures both models are optimized before evaluation.
+
+---
+
+### 6. **Best Algorithm Selector**
+- After training and evaluation, both MLP and TCN are compared using performance metrics such as **RMSE, R², MAE**.  
+- The **best-performing algorithm** is selected for final deployment.
+
+---
+
+### 7. **Model Boosting**
+- The best model undergoes **boosting** – retraining in multiple stages to refine weights and improve accuracy.  
+- This creates a more robust and stable final model.
+
+---
+
+### 8. **Final Boosted Model**
+- The boosted version of the best-performing model becomes the **final model**.  
+- It is now ready for making predictions on unseen data.
+
+---
+
+### 9. **Predictions**
+- The final model predicts **future ERP values** on the prepared future dataset.  
+- Results are then visualized or used for decision-making in business applications.
+
+---
+
+## 🔄 Summary of Data Flow
+1. **ERP Data → Future Data Prep → Train/Test Split**  
+2. **Training Data → Neural Network (MLP & TCN)**  
+3. **Hyperparameter Tuning → Best Algorithm Selection**  
+4. **Best Model → Model Boosting → Final Boosted Model**  
+5. **Final Model + Future Dataset → Predictions**
+
+---
+
+## ✅ Key Takeaways
+- The system is **model-agnostic** (tests both MLP and TCN).  
+- **Best-performing model** is automatically selected.  
+- Boosting ensures **accuracy and robustness**.  
+- Predictions are made on **future ERP datasets** for business forecasting.
+
 
 ### How the Model Works 
 
